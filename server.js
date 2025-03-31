@@ -6,8 +6,8 @@ require('dotenv').config();
 const app = express();
 app.use(express.json());
 app.use(cors({ origin: [
-'https://expense-tracker-frontend-harshikaclean-davala-vinod-abrahams-projects.vercel.app' }));
-'http://localhost:3000']
+'https://expense-tracker-frontend-harshikaclean-davala-vinod-abrahams-projects.vercel.app',
+'http://localhost:3000']}));
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
