@@ -32,6 +32,7 @@ router.put('/:id', auth, async (req, res) => {
     expense = await Expense.findByIdAndUpdate(req.params.id, { type, amount, category, date, description }, { new: true });
     res.json(expense);
   } catch (err) {
+    console.error(err);
     res.status(500).json({ msg: 'Server error' });
   }
 });
@@ -44,6 +45,7 @@ router.delete('/:id', auth, async (req, res) => {
     await Expense.findByIdAndDelete(req.params.id);
     res.json({ msg: 'Expense deleted' });
   } catch (err) {
+    console.error(err);
     res.status(500).json({ msg: 'Server error' });
   }
 });
