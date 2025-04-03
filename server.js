@@ -5,14 +5,16 @@ require('dotenv').config();
 
 const app = express();
 app.use(express.json());
+//
 app.use(cors({
   origin: [
     'https://expense-tracker-frontend-harshika.vercel.app',
     'https://expense-tracker-frontend-clean-davala-vinod-abrahams-projects.vercel.app',
+    'https://expense-tracker-front-git-e337b0-davala-vinod-abrahams-projects.vercel.app', // Add this
     'http://localhost:3000'
   ]
 }));
-
+//
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
